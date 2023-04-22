@@ -1,47 +1,18 @@
-name: Deploy to Cloudflare Pages
+name: My first job
 
 on:
   push:
     branches:
       - main
 
-  # Allows you to run this workflow manually from the Actions tab
-#  workflow_dispatch:
-    # inputs:
-    #   DEPLOYMENT_ENVIRONMENT:
-    #     description: 'Deployment environment'
-    #     required: true
-    #     type: choice
-    #     options:
-    #     - preview
-    #     - production
-    #     default: 'production'
-
 jobs:
-  deploy:
+  my_first_job:
+    name: My first job
     runs-on: ubuntu-latest
-    
-    environment: 
+
+    environment:
       name: this
       url: https://github.com/ka9an/denopendabot
-
-
-
-     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v3
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
-
-      - name: Install Dependencies
-        run: yarn # && yarn build
-        
-
-
-    
 
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -54,7 +25,18 @@ jobs:
       R2_PUBLIC_BUCKET: ${{ secrets.R2_PUBLIC_BUCKET }}
       PRODUCTION_BRANCH: main
 
-       
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn 
+
       - name: Setup
         run: yarn setup:production
       - name: Deploy to Cloudflare Pages

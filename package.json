@@ -1,7 +1,7 @@
 {
   "name": "microfeed",
   "version": "0.1.1",
-  "license": "MIT",
+  "private": true,
   "scripts": {
     "build:production": "NODE_ENV=production webpack --config ./webpack.config.js",
     "dev": "yarn setup:development && DEPLOYMENT_ENVIRONMENT=development wrangler pages dev --d1 FEED_DB --compatibility-date=2022-11-17 --persist -- webpack serve --host localhost --mode development",

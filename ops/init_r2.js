@@ -7,7 +7,7 @@ const {VarsReader} = require('./lib/utils');
 
 class SetupR2 {
   constructor() {
-    const currentEnv = process.env.DEPLOYMENT_ENVIRONMENT || 'production';
+    const currentEnv = 'production';
     this.v = new VarsReader(currentEnv);
     this.endpoint = `https://${this.v.get('CLOUDFLARE_ACCOUNT_ID')}.r2.cloudflarestorage.com`;
     this.s3 = new AWS.S3({

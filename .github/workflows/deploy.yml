@@ -7,15 +7,15 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-    inputs:
-      DEPLOYMENT_ENVIRONMENT:
-        description: 'Deployment environment'
-        required: true
-        type: choice
-        options:
-        - preview
-        - production
-        default: 'production'
+    # inputs:
+    #   DEPLOYMENT_ENVIRONMENT:
+    #     description: 'Deployment environment'
+    #     required: true
+    #     type: choice
+    #     options:
+    #     - preview
+    #     - production
+    #     default: 'production'
 
 jobs:
   deploy:

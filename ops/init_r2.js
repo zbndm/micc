@@ -1,6 +1,7 @@
 /*
   Set CORS rules for a bucket, so we can use presigned_url to upload files from browser js.
  */
+
 const AWS = require('aws-sdk');
 
 const {VarsReader} = require('./lib/utils');

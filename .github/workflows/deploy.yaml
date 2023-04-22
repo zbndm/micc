@@ -41,3 +41,4 @@ jobs:
         run: yarn setup:production
       - name: Deploy to Cloudflare Pages
         run: yarn deploy:github
+

@@ -1,5 +1,9 @@
 const fs = require('fs');
 const {VarsReader} = require('./lib/utils');
+require('dotenv').config()
+
+
+
 
 const v = new VarsReader('development');
 

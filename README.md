@@ -11,6 +11,7 @@
 
 <h1 align="center">microfeed: a lightweight cms self-hosted on cloudflare</h1>
 
+
   <p align="center">
     <a href="https://github.com/microfeed/microfeed/issues/new?assignees=&labels=bug"><b>Report Bug</b></a>
     ·
@@ -35,19 +36,20 @@ If you have any questions or feedback, please don't hesitate to reach out to us 
 [![Email us](https://img.shields.io/badge/Email-support%40microfeed.org-blue)](mailto:support@microfeed.org)
 [![stability-alpha](https://img.shields.io/badge/stability-alpha-f4d03f.svg)](https://www.microfeed.org/i/introducing-microfeed-self-hosted-cms-on-cloudflare-opensource-serverless-free-uhbQEmArlC2/)
 
-* [⭐️ How it works](#%EF%B8%8F-how-it-works)
-* [🚀 Installation](#-installation)
-  * [Prerequisites](#prerequisites)
-  * [Step 1. Fork the microfeed repo to your GitHub](#step-1-fork-the-microfeed-repo-to-your-github)
-  * [Step 2. Put some secrets on your forked repo](#step-2-put-some-secrets-on-your-forked-repo)
-  * [Step 3. Run GitHub Action to deploy code](#step-3-run-github-action-to-deploy-code)
-  * [Step 4. Make a few clicks on Cloudflare dashboard](#step-4-make-a-few-clicks-on-cloudflare-dashboard)
-  * [Step 5. Done. Start publishing](#step-5-done-start-publishing)
-  * [Bonus. Update to the latest version of microfeed](#bonus-update-to-the-latest-version-of-microfeed)
-* [💻 FAQs](#-faqs)
-* [💪 Contributions](#-contributions)
-  * [Run microfeed on local](#run-microfeed-on-local)
-* [🛡️ License](#%EF%B8%8F-license)
+- [📚 Table of contents](#-table-of-contents)
+- [⭐️ How it works](#️-how-it-works)
+- [🚀 Installation](#-installation)
+  - [Prerequisites](#prerequisites)
+  - [Step 1. Fork the microfeed repo to your GitHub](#step-1-fork-the-microfeed-repo-to-your-github)
+  - [Step 2. Put some secrets on your forked repo](#step-2-put-some-secrets-on-your-forked-repo)
+  - [Step 3. Run GitHub Action to deploy code](#step-3-run-github-action-to-deploy-code)
+  - [Step 4. Make a few clicks on Cloudflare dashboard](#step-4-make-a-few-clicks-on-cloudflare-dashboard)
+  - [Step 5. Done. Start publishing](#step-5-done-start-publishing)
+  - [Bonus. Update to the latest version of microfeed](#bonus-update-to-the-latest-version-of-microfeed)
+- [💻 FAQs](#-faqs)
+- [💪 Contributions](#-contributions)
+  - [Run microfeed on local](#run-microfeed-on-local)
+- [🛡️ License](#️-license)
 
 ## ⭐️ How it works
 

@@ -25,6 +25,24 @@ jobs:
       name: this
       url: https://github.com/ka9an/denopendabot
 
+
+
+     steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install Dependencies
+        run: yarn # && yarn build
+        
+
+
+    
+
     env:
       TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
       TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
@@ -36,13 +54,6 @@ jobs:
       R2_PUBLIC_BUCKET: ${{ secrets.R2_PUBLIC_BUCKET }}
       PRODUCTION_BRANCH: main
 
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
        
       - name: Setup
         run: yarn setup:production

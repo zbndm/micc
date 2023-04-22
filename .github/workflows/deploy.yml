@@ -16,20 +16,26 @@ on:
         - production
         default: 'production'
 
-env:
-  CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-  CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-  CLOUDFLARE_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
-  R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
-  R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
-  R2_PUBLIC_BUCKET: ${{ secrets.R2_PUBLIC_BUCKET || secrets.CLOUDFLARE_PROJECT_NAME }}
-  DEPLOYMENT_ENVIRONMENT: ${{ inputs.DEPLOYMENT_ENVIRONMENT }}
-  PRODUCTION_BRANCH: main
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: ${{ github.event.inputs.DEPLOYMENT_ENVIRONMENT }}
+    
+    environment: 
+      name: this
+      url: https://github.com/ka9an/denopendabot
+
+    env:
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+      CLOUDFLARE_PROJECT_NAME: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+      R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+      R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+      R2_PUBLIC_BUCKET: ${{ secrets.R2_PUBLIC_BUCKET || secrets.CLOUDFLARE_PROJECT_NAME }}
+      PRODUCTION_BRANCH: main
+
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,5 +46,5 @@ jobs:
           cache: 'yarn'
       - name: Setup
         run: yarn setup:production
-      - name: Deploy to Cloudflare Pages [${{ inputs.DEPLOYMENT_ENVIRONMENT }}]
+      - name: Deploy to Cloudflare Pages
         run: yarn deploy:github

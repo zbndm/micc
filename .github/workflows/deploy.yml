@@ -17,7 +17,6 @@ on:
         - production
         default: 'production'
 
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
